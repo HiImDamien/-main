@@ -1,0 +1,21 @@
+  .Banner-header {
+    background-color: #85BB65;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .dollar-icon {
+    width: 30px;  /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .Banner-text {
+    color: #084f09; /* Sets text color */
+    font-weight: bold; /* Makes the text bold */
+    font-size: 1.8rem; /* Increases font size */
+}      
