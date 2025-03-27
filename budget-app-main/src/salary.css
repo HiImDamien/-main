@@ -1,0 +1,15 @@
+.Salary-Calculator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 60vh;
+    background-color: #85BB65;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Salary-input {
+    color: #084f09; /* Sets text color */
+    font-weight: bold; /* Makes the text bold */
+    font-size: 1.25rem;
+}
