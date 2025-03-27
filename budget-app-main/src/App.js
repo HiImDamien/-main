@@ -21,13 +21,13 @@ function App() {
     return total + bill.cost * multiplier;
   }, 0);
 
-  // Calculate monthly savings: (salary / 12) - total monthly bill cost
+  // Calculate monthly savings: (salary / 12) - total monthly bill costs
   const monthlySavings = salary / 12 - totalMonthlyBillCost;
 
   // Calculate expense data dynamically based on the entered bills (use bill name directly)
   const expenseData = bills.reduce((data, bill) => {
     const multiplier =
-      bill.recurrence === "weekly"
+      bill.recurrence === "weekly" 
         ? 4.33
         : bill.recurrence === "yearly"
         ? 1 / 12
