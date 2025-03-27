@@ -9,6 +9,30 @@ import {
 } from "recharts";
 
 const ExpensePieChart = ({ expenseData }) => {
+  // display pie chart without data
+  if (!expenseData || Object.keys(expenseData).length === 0) {
+    return (
+      <div style={{ width: "100%", height: 300 }}>
+        <ResponsiveContainer>
+          <PieChart margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+            <Pie
+              data={[{ name: "No Data", value: 100 }]}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+            >
+              <Cell fill="#d3d3d3" />
+            </Pie>
+            <Tooltip formatter={(value) => `${value}%`} />
+            <Legend />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+    );
+  }
+
   // Transform the input data into the format expected by Recharts
   const chartData = Object.entries(expenseData).map(([name, value]) => ({
     name,
@@ -31,34 +55,11 @@ const ExpensePieChart = ({ expenseData }) => {
   const containerStyle = {
     width: "100%",
     height: 300,
-    // This prevents the outline on the container
-    outline: "none",
-  };
-
-  // Custom styles for SVG elements
-  const svgStyle = {
-    // Prevents outline on all SVG elements
-    "& *": {
-      outline: "none",
-    },
+    outline: "none", // This prevents the outline on the container
   };
 
   return (
     <div style={containerStyle} className="no-outline">
-      <style>
-        {`
-          .no-outline * {
-            outline: none !important;
-          }
-          .recharts-wrapper, .recharts-surface {
-            outline: none !important;
-          }
-          .recharts-sector:focus, .recharts-sector:active {
-            outline: none !important;
-            stroke: none !important;
-          }
-        `}
-      </style>
       <ResponsiveContainer>
         <PieChart margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <Pie
@@ -72,16 +73,9 @@ const ExpensePieChart = ({ expenseData }) => {
             outerRadius={80}
             fill="#8884d8"
             dataKey="value"
-            // Disable any click styling
-            activeIndex={[]}
-            activeShape={{ outline: "none" }}
           >
             {chartData.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-                style={{ outline: "none" }}
-              />
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
           <Tooltip formatter={(value) => `${value}%`} />

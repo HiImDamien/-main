@@ -32,7 +32,7 @@ const SavingsDisplay = ({ savings }) => {
 
   return (
     <div className="savings-container">
-      <h2 className="savings-label">Monthly Savings</h2>
+      <h2 className="savings-label">Savings</h2>
       <div className="savings-amount">{formattedSavings}</div>
     </div>
   );

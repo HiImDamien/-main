@@ -1,59 +1,41 @@
+.Bills {
+  padding-left: 20px;
+}
 
+.bill-list button {
+  background-color: #b00020;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
 
-button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 1rem;
+.bill-list button:hover {
+  background-color: #d32f2f;
+}
 
-    cursor: pointer;
-    margin: 6px 6px 12px 0;
-    transition: background-color 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #222;
-  }
-  
-  .input-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+.input-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
 
-    margin-top: 12px;
-    margin-bottom: 16px;
-  }
-  
-  .input-row input,
-  .input-row select {
-    background-color: #2a2a2a;
-    color: #ffffff;
-    border: 1px solid #444;
+.input-row input,
+.input-row select {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 180px;
+}
 
-    padding: 8px;
-    border-radius: 6px;
-    font-size: 1rem;
-    width: 180px;
-  }
-  
-  .input-row input::placeholder {
-    color: #ffffff;
-  }
-  
-  .bill-list button {
-    background-color: #b00020;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 4px 10px;
-    font-size: 0.9rem;
-    cursor: pointer;
-  }
-  
-  .bill-list button:hover {
-    background-color: #d32f2f;
-  }
-  
+.input-row input::placeholder {
+  color: #ffffff;
+}
